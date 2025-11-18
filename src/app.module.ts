@@ -45,22 +45,6 @@ const SessionModuleBase = createModule(() => {
       },
     ]),
 
-    //adding the CSRF
-    //CookieParserModuleBase.forRoot({}),
-    //SessionModuleBase.forRoot({}),
-    //CsrfModule,
-
-    // ThrottlerModule.forRootAsync({
-    //   imports: [ConfigModule],
-    //   inject: [ConfigService],
-    //   useFactory: (config: ConfigService) => [
-    //     {
-    //       ttl: config.get('THROTTLE_TTL'),
-    //       limit: config.get('THROTTLE_LIMIT'),
-    //     },
-    //   ],
-    // }),
-
     CacheModule.register(),
     ScheduleModule.forRoot(),
     ConfigModule.forRoot({
