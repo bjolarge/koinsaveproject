@@ -183,7 +183,6 @@ import { LocalAuthenticationGuard } from './guard/localAuthentication.guard';
 import JwtAuthenticationGuard from './guard/jwt-authentication.guard';
 import JwtRefreshGuard from './guard/JwtRefreshGuard';
 import { EmailConfirmationService } from '../email-confirmation/email-confirmation.service';
-import { CsrfGenAuth, CsrfInterceptor } from '@tekuconcept/nestjs-csrf';
 import { PasswordResetDto } from './dto/password-reset.dto';
 import { ConfigService } from '@nestjs/config';
 import type RequestWithUser from './interfaces/requestWithUser.interface';
@@ -194,7 +193,6 @@ import Role from '../user/enum/role.enum';
 
 @Controller('auth')
 @UseInterceptors(ClassSerializerInterceptor)
-@UseInterceptors(CsrfInterceptor)
 export class AuthController {
   constructor(
     private readonly authService: AuthService,
