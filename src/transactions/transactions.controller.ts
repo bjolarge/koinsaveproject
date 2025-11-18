@@ -1,11 +1,10 @@
-// src/transactions/transactions.controller.ts
 import { Controller, Post, Body, UseGuards, Req, Get } from '@nestjs/common';
 import { TransactionsService } from './transactions.service';
-import JwtAuthenticationGuard from 'src/auth/guard/jwt-authentication.guard';
+import JwtAuthenticationGuard from '../auth/guard/jwt-authentication.guard';
 import { CreateTransactionDto } from './dto/create-transaction.dto';
-import { GetUser } from 'src/auth/decorators/get-user.decorator';
-import User from 'src/user/entities/user.entity';
-import RequestWithUser from 'src/auth/interfaces/requestWithUser.interface';
+import { GetUser } from '../auth/decorators/get-user.decorator';
+import User from '../user/entities/user.entity';
+import RequestWithUser from '../auth/interfaces/requestWithUser.interface';
 import { DepositDto } from './dto/deposit.dto';
 import { TransferDto } from './dto/transfer.dto';
 import { ApiBadRequestResponse, ApiBody, ApiOkResponse } from '@nestjs/swagger';
