@@ -10,7 +10,7 @@ async function bootstrap() {
 
    const config = new DocumentBuilder()
     .setTitle('KoinSave Project')
-    .setDescription('The endpoints in this app powers: authentication and transfers')
+    .setDescription('The endpoints in this app power: authentication and transfers')
     .setVersion('1.0')
     .addTag('koinsave')
     .build();
