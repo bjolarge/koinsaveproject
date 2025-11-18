@@ -21,9 +21,12 @@ Koinsave project
 #make a request to deposit endpoint on transaction to add money
 #make a request to a transfer endpoint on transaction controller to send
 money to other user in the db
-#To run unit test to test the transaction use:
+For rate limiting, I added throttle globally in the app module as a security mechanism to prevent request abuse
+I also have in place class-validator and transformer to prevent wrong data types from being entered into the DB
 
-For rate limiting, I added throtle globally
+#To run unit test to test the transaction use:
+Note: I mocked the test because the tester would not have access to 
+my testing DB
 
 npm run test -- transactions.controller.spec.ts
 npm run test -- transactions.service.spec.ts
