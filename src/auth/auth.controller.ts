@@ -225,7 +225,6 @@ export class AuthController {
 
   @HttpCode(200)
   @UseGuards(LocalAuthenticationGuard)
-  //@CsrfGenAuth()
   @Post('login')
   async logIn(
     @Req() request: RequestWithUser,
