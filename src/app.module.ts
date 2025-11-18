@@ -14,7 +14,6 @@ import { EmailConfirmationModule } from './email-confirmation/email-confirmation
 import { EmailSchedulingModule } from './email-scheduling/email-scheduling.module';
 import { ThrottlerModule, ThrottlerGuard } from '@nestjs/throttler';
 import { createModule } from 'create-nestjs-middleware-module';
-import { CsrfModule } from '@tekuconcept/nestjs-csrf';
 import { TransactionsModule } from './transactions/transactions.module';
 import session from 'express-session';
 import cookieParser from 'cookie-parser';
@@ -99,10 +98,7 @@ const SessionModuleBase = createModule(() => {
         ssl: configService.get('DB_SSL'),
         autoLoadEntities: true,
 
-        //synchronize: false,
-        //change this whilst going live to use env variable
-        synchronize: true,
-        // synchronize: configService.get("NODE_ENV") === NODE_ENV.PRODUCTION,
+        synchronize: false,
       }),
       inject: [ConfigService],
     }),
